@@ -45,15 +45,17 @@ export default function HomeInvestmentSec() {
                         We have an extensive portfolio of investment properties. Learn about our past work here.
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-                        <Button
-                            rounded={'full'}
-                            bg={"#7296B8"}
-                            color={'white'}
-                            _hover={{
-                                bg: "#2E5984",
-                            }}>
-                            <NavLink to={'multifamily'}>Learn more</NavLink>
-                        </Button>
+                        <NavLink to={'multifamily'}>
+                            <Button
+                                rounded={'full'}
+                                bg={"#7296B8"}
+                                color={'white'}
+                                _hover={{
+                                    bg: "#2E5984",
+                                }}>
+                                Learn more
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </Stack>
             </Flex>

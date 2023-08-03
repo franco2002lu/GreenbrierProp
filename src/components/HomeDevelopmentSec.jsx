@@ -37,15 +37,17 @@ export default function HomeDevelopmentSec() {
                         development projects here.
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-                        <Button
-                            rounded={'full'}
-                            bg={"#7296B8"}
-                            color={'white'}
-                            _hover={{
-                                bg: "#2E5984",
-                            }}>
-                            <NavLink to={'development'}>Learn more</NavLink>
-                        </Button>
+                        <NavLink to={'development'}>
+                            <Button
+                                rounded={'full'}
+                                bg={"#7296B8"}
+                                color={'white'}
+                                _hover={{
+                                    bg: "#2E5984",
+                                }}>
+                                Learn more
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </Stack>
             </Flex>

@@ -37,15 +37,17 @@ export default function HomeAboutSec() {
                         Learn more about our specific approach here.
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-                        <Button
-                            rounded={'full'}
-                            bg={"#7296B8"}
-                            color={'white'}
-                            _hover={{
-                                bg: "#2E5984",
-                            }}>
-                            <NavLink to={'about'}>Learn more</NavLink>
-                        </Button>
+                        <NavLink to={'about'}>
+                            <Button
+                                rounded={'full'}
+                                bg={"#7296B8"}
+                                color={'white'}
+                                _hover={{
+                                    bg: "#2E5984",
+                                }}>
+                                Learn more
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </Stack>
             </Flex>

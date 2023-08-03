@@ -14,15 +14,17 @@ export default function HomeContactSec() {
                     Let's Connect
                 </Text>
             </Heading>
-            <Button
-                bg={"#0D512C"}
-                color={"#f6f3e7"}
-                _hover={{
-                    bg: "#8ca968",
-                }}
-                variant="solid">
-                <NavLink to={'contact'}>Contact Us</NavLink>
-            </Button>
+            <NavLink to={'contact'}>
+                <Button
+                    bg={"#0D512C"}
+                    color={"#f6f3e7"}
+                    _hover={{
+                        bg: "#8ca968",
+                    }}
+                    variant="solid">
+                    Contact Us
+                </Button>
+            </NavLink>
         </VStack>
     )
 }

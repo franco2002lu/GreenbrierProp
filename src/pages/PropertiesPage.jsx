@@ -38,13 +38,15 @@ export default function PropertiesPage() {
                             fontSize={useBreakpointValue({ base: '3xl', md: '4xl', lg: '5xl' })}>
                             Investments
                         </Text>
-                        <Button
-                            bg={'whiteAlpha.300'}
-                            rounded={'full'}
-                            color={'white'}
-                            _hover={{ bg: 'whiteAlpha.500' }}>
-                            <NavLink to={'/multifamily'}>Learn more</NavLink>
-                        </Button>
+                        <NavLink to={'/multifamily'}>
+                            <Button
+                                bg={'whiteAlpha.300'}
+                                rounded={'full'}
+                                color={'white'}
+                                _hover={{ bg: 'whiteAlpha.500' }}>
+                                Learn more
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </VStack>
             </Flex>
@@ -69,13 +71,15 @@ export default function PropertiesPage() {
                             fontSize={useBreakpointValue({ base: '3xl', md: '4xl', lg: '5xl' })}>
                             Developments
                         </Text>
-                        <Button
-                            bg={'whiteAlpha.300'}
-                            rounded={'full'}
-                            color={'white'}
-                            _hover={{ bg: 'whiteAlpha.500' }}>
-                            <NavLink to={'/development'}>Learn more</NavLink>
-                        </Button>
+                        <NavLink to={'/development'}>
+                            <Button
+                                bg={'whiteAlpha.300'}
+                                rounded={'full'}
+                                color={'white'}
+                                _hover={{ bg: 'whiteAlpha.500' }}>
+                                Learn more
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </VStack>
             </Flex>
