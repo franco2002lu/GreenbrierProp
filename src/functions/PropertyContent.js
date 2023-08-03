@@ -1,6 +1,6 @@
 export const getPropertyData = async (propType) => {
     try {
-        const res = await fetch('https://greenbrier-api.onrender.com/'.concat(propType), {
+        const res = await fetch('https://greenbrier-prop-backend.onrender.com/'.concat(propType), {
             method: 'GET',
             headers : {
                 Accept: "application/json",
