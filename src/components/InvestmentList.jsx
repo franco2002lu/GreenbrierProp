@@ -1,4 +1,4 @@
-import {Container, Heading, List, ListItem} from "@chakra-ui/react";
+import {Container, Heading, List, ListItem, Text, useBreakpointValue} from "@chakra-ui/react";
 
 export default function InvestmentList({state, content}) {
     const states = {
@@ -56,8 +56,26 @@ export default function InvestmentList({state, content}) {
 
     return (
         <Container minW={'full'} paddingX={'0px'}>
-            <Heading fontSize={'lg'}>
-                {states[state]}
+            {/*<Heading fontSize={'3xl'}>*/}
+            {/*    {states[state]}*/}
+            {/*</Heading>*/}
+            <Heading fontSize={{ base: 'xl', lg: '2xl', xl: '3xl' }}>
+                <Text
+                    as={'span'}
+                    position={'relative'}
+                    _after={{
+                        content: "''",
+                        width: 'full',
+                        height: useBreakpointValue({ base: '20%', md: '30%' }),
+                        position: 'absolute',
+                        bottom: 1,
+                        left: 0,
+                        bg: "#9bb8d3",
+                        zIndex: -1,
+                    }}>
+                    {states[state]}
+                </Text>
+                <br />{' '}
             </Heading>
             {content && content.map(item => {
                 if (item.state===state) {

@@ -28,7 +28,7 @@ export default function MultifamilyPage() {
     return (
         <Container minW={'full'} paddingX={'0px'}>
             <InvestmentBanner/>
-                <Stack minH={'30rem'} direction={{base: 'column', md: 'row'}} paddingY={'5rem'} paddingX={'5rem'}>
+                <Stack minH={'30rem'} direction={{base: 'column', md: 'row'}} paddingY={'5rem'} paddingX={'8rem'}>
                     <Flex p={0} flex={1} align={'top'} justify={'center'}>
                         <Stack spacing={'10rem'} w={'fit-content'} maxW={'lg'} >
                             <Image
