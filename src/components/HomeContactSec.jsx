@@ -14,7 +14,7 @@ export default function HomeContactSec() {
                 </Text>
             </Heading>
             <Button
-                onClick={() => window.location.replace('/contact')}
+                onClick={() => window.location.replace('https://greenbrier-prop.onrender.com/contact')}
                 bg={"#0D512C"}
                 color={"#f6f3e7"}
                 _hover={{
