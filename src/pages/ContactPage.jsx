@@ -14,7 +14,8 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
-    Textarea
+    Textarea,
+    useToast
 } from '@chakra-ui/react';
 import {
     MdPhone,
@@ -25,34 +26,38 @@ import {
 import { BsPerson } from 'react-icons/bs';
 import {Form} from "react-router-dom";
 import ScrollToTop from "../functions/ScrollToTop";
+import { useForm, ValidationError } from '@formspree/react';
+import {CheckCircleIcon} from "@chakra-ui/icons";
 
-// for emailing form: https://www.youtube.com/watch?v=0X0kovjzLrw
 export default function ContactPage() {
-    ScrollToTop();
-    return (
-        // <Box maxW={'full'}>
-        //     <Form method={'post'} action={'https://formsubmit.co/EMAILHERE'}>
-        //         <FormControl isRequired mb={'40px'}>
-        //             <FormLabel>Subject:</FormLabel>
-        //             <Input type={"email"} name={"email"}/>
-        //             <FormHelperText>Enter the email subject</FormHelperText>
-        //         </FormControl>
-        //
-        //         <FormControl isRequired mb={'20px'} >
-        //             <FormLabel>Message:</FormLabel>
-        //             <Textarea placeholder={'Enter your message here'} name={'description'} />
-        //         </FormControl>
-        //
-        //         {/*<FormControl display={'flex'} alignItems={'center'} mb={'40px'}>*/}
-        //         {/*    <Checkbox name={'isPriority'} size={'lg'} colorScheme={'purple'}/>*/}
-        //         {/*    <FormLabel ml={'10px'} mb={'0px'}>Make this a priority task.</FormLabel>*/}
-        //         {/*</FormControl>*/}
-        //
-        //         <Button type={'submit'}>Submit</Button>
-        //     </Form>
-        // </Box>
+    const [state, handleSubmit] = useForm("mnqkjwgv");
 
-        <Container bg={"#C2D4BB"} maxW="full" maxH={'full'} mt={0} centerContent overflow="hidden" paddingBottom={'2rem'}>
+    // todo: implement reCAPTCHA
+
+    ScrollToTop();
+
+    const toast = useToast();
+    const showToast = () => {
+        toast({title: 'Success',
+            description: 'Your email has been sent.',
+            duration: 3000,
+            isClosable: true,
+            status: 'success',
+            position: 'top',
+            icon: <CheckCircleIcon />
+        })
+    }
+
+
+    return (
+        <Container
+            bg={"#C2D4BB"}
+            maxW="full"
+            maxH={'full'}
+            mt={0}
+            centerContent
+            overflow="hidden"
+            paddingBottom={'2rem'}>
             <Flex>
                 <Box
                     bg={"#0D512C"}
@@ -94,9 +99,10 @@ export default function ContactPage() {
                             </WrapItem>
                             <WrapItem>
                                 <Box bg={"#eff3ec"} borderRadius="lg">
-                                    <Form
-                                        method={'post'}
-                                        action={'https://formsubmit.co/davidoliver@greenbrierpropertiesllc.com'}>
+                                    <Form onSubmit={(val) => {
+                                        handleSubmit(val).then(r => showToast());
+                                    }
+                                        }>
                                         <Box m={8} color="black">
                                             <VStack spacing={3}>
                                                 <HStack>
