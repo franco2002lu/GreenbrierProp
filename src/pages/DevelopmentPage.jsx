@@ -5,9 +5,12 @@ import {Container, SimpleGrid} from "@chakra-ui/react";
 import {getPropertyData} from "../functions/PropertyContent";
 import DevelopmentCard from "../components/DevelopmentCard";
 import DevelopmentBanner from "../components/DevelopmentBanner";
+import ScrollToTop from "../functions/ScrollToTop";
 
 export default function DevelopmentPage() {
     const [content, setContent] = useState(undefined);
+
+    ScrollToTop();
 
     useEffect(() => {
         getPropertyData('development')

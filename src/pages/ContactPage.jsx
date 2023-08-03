@@ -24,9 +24,11 @@ import {
 } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import {Form} from "react-router-dom";
+import ScrollToTop from "../functions/ScrollToTop";
 
 // for emailing form: https://www.youtube.com/watch?v=0X0kovjzLrw
 export default function ContactPage() {
+    ScrollToTop();
     return (
         // <Box maxW={'full'}>
         //     <Form method={'post'} action={'https://formsubmit.co/EMAILHERE'}>
@@ -75,7 +77,7 @@ export default function ContactPage() {
                                                 </Text>
                                             </HStack>
                                             <HStack>
-                                                <MdEmail color={"#8ca968"}size="20px" />
+                                                <MdEmail color={"#8ca968"} size="20px" />
                                                 <Text fontWeight={'bold'}>
                                                     davidoliver@greenbrierpropertiesllc.com
                                                 </Text>

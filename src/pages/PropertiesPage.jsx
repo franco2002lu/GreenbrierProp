@@ -8,8 +8,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import {NavLink} from "react-router-dom";
+import ScrollToTop from "../functions/ScrollToTop";
 
 export default function PropertiesPage() {
+    ScrollToTop();
+
     return (
         <SimpleGrid
             w={'full'}

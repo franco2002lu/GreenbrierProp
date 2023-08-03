@@ -1,4 +1,9 @@
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom"
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+    RouterProvider
+} from "react-router-dom"
 
 // layouts and pages:
 import RootLayout from "./layouts/RootLayout"
@@ -22,6 +27,7 @@ const router = createBrowserRouter(
         </Route>
     )
 );
+
 
 function App() {
     return (

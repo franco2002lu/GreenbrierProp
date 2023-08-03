@@ -10,9 +10,12 @@ import {useEffect, useState} from "react";
 import {getPropertyData} from "../functions/PropertyContent";
 import InvestmentBanner from "../components/InvestmentBanner";
 import InvestmentList from "../components/InvestmentList";
+import ScrollToTop from "../functions/ScrollToTop";
 
 export default function MultifamilyPage() {
     const [content, setContent] = useState(undefined);
+
+    ScrollToTop();
 
     useEffect(() => {
         getPropertyData('multifamily')
