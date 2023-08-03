@@ -1,4 +1,5 @@
 import {Heading, Button, VStack, Text} from '@chakra-ui/react'
+import {NavLink} from "react-router-dom";
 
 export default function HomeContactSec() {
     return (
@@ -14,14 +15,13 @@ export default function HomeContactSec() {
                 </Text>
             </Heading>
             <Button
-                onClick={() => window.location.replace('https://greenbrier-prop.onrender.com/contact')}
                 bg={"#0D512C"}
                 color={"#f6f3e7"}
                 _hover={{
                     bg: "#8ca968",
                 }}
                 variant="solid">
-                Contact Us
+                <NavLink to={'contact'}>Contact Us</NavLink>
             </Button>
         </VStack>
     )

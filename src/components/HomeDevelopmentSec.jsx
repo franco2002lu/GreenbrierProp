@@ -7,6 +7,7 @@ import {
     Text,
     useBreakpointValue,
 } from '@chakra-ui/react'
+import {NavLink} from "react-router-dom";
 
 export default function HomeDevelopmentSec() {
     return (
@@ -37,14 +38,13 @@ export default function HomeDevelopmentSec() {
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
                         <Button
-                            onClick={() => window.location.replace('/development')}
                             rounded={'full'}
                             bg={"#7296B8"}
                             color={'white'}
                             _hover={{
                                 bg: "#2E5984",
                             }}>
-                            Learn more
+                            <NavLink to={'development'}>Learn more</NavLink>
                         </Button>
                     </Stack>
                 </Stack>

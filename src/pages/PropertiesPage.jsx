@@ -7,6 +7,7 @@ import {
     VStack
 } from "@chakra-ui/react";
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 export default function PropertiesPage() {
     return (
@@ -35,12 +36,11 @@ export default function PropertiesPage() {
                             Investments
                         </Text>
                         <Button
-                            onClick={() => window.location.replace('/multifamily')}
                             bg={'whiteAlpha.300'}
                             rounded={'full'}
                             color={'white'}
                             _hover={{ bg: 'whiteAlpha.500' }}>
-                            Learn more
+                            <NavLink to={'/multifamily'}>Learn more</NavLink>
                         </Button>
                     </Stack>
                 </VStack>
@@ -67,12 +67,11 @@ export default function PropertiesPage() {
                             Developments
                         </Text>
                         <Button
-                            onClick={() => window.location.replace('/development')}
                             bg={'whiteAlpha.300'}
                             rounded={'full'}
                             color={'white'}
                             _hover={{ bg: 'whiteAlpha.500' }}>
-                            Learn more
+                            <NavLink to={'/development'}>Learn more</NavLink>
                         </Button>
                     </Stack>
                 </VStack>

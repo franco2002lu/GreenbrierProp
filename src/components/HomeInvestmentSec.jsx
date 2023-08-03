@@ -7,6 +7,7 @@ import {
     Text,
     useBreakpointValue,
 } from '@chakra-ui/react'
+import {NavLink} from "react-router-dom";
 
 export default function HomeInvestmentSec() {
     return (
@@ -45,14 +46,13 @@ export default function HomeInvestmentSec() {
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
                         <Button
-                            onClick={() => window.location.replace('/multifamily')}
                             rounded={'full'}
                             bg={"#7296B8"}
                             color={'white'}
                             _hover={{
                                 bg: "#2E5984",
                             }}>
-                            Learn more
+                            <NavLink to={'multifamily'}>Learn more</NavLink>
                         </Button>
                     </Stack>
                 </Stack>
