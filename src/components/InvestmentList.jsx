@@ -1,4 +1,4 @@
-import {Container, Heading, List, ListItem, UnorderedList} from "@chakra-ui/react";
+import {Container, Heading, List, ListItem} from "@chakra-ui/react";
 
 export default function InvestmentList({state, content}) {
     const states = {
@@ -65,6 +65,8 @@ export default function InvestmentList({state, content}) {
                         <List>
                             <ListItem>{item.community}, {item.city}, {item.state}, {item.numUnits} units</ListItem>
                         </List>);
+                } else {
+                    return <></>
                 }
             })}
         </Container>

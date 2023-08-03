@@ -1,11 +1,12 @@
-
 import {
     Container,
     Stack,
     Text,
     Heading,
     SimpleGrid,
-    Flex, Image, Center, Box
+    Image,
+    Center,
+    Box
 } from '@chakra-ui/react'
 
 export default function OwnerDescriptionSec() {

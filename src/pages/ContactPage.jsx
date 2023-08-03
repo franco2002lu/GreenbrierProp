@@ -94,7 +94,9 @@ export default function ContactPage() {
                             </WrapItem>
                             <WrapItem>
                                 <Box bg={"#eff3ec"} borderRadius="lg">
-                                    <Form method={'post'} action={'https://formsubmit.co/EMAILHERE'}>
+                                    <Form
+                                        method={'post'}
+                                        action={'https://formsubmit.co/davidoliver@greenbrierpropertiesllc.com'}>
                                         <Box m={8} color="black">
                                             <VStack spacing={3}>
                                                 <HStack>
@@ -105,7 +107,7 @@ export default function ContactPage() {
                                                                 pointerEvents="none"
                                                                 children={<BsPerson color={"gray.800"} />}
                                                             />
-                                                            <Input type="text" size="md" />
+                                                            <Input name={'Name'} type="text" size="md" />
                                                         </InputGroup>
                                                     </FormControl>
                                                     <FormControl isRequired id="form_email">
@@ -115,7 +117,7 @@ export default function ContactPage() {
                                                                 pointerEvents="none"
                                                                 children={<MdOutlineEmail color={"gray.800"} />}
                                                             />
-                                                            <Input type="text" size="md" />
+                                                            <Input name={'Email'} type="text" size="md" />
                                                         </InputGroup>
                                                     </FormControl>
                                                 </HStack>
@@ -123,15 +125,17 @@ export default function ContactPage() {
                                                     <FormLabel>Subject:</FormLabel>
                                                     <InputGroup borderColor={"#8ca968"}>
                                                         <Input
+                                                            name={'Subject'}
                                                             type="text"
-                                                               size="md"
-                                                               placeholder={'Enter the subject here'}
+                                                            size="md"
+                                                            placeholder={'Enter the subject here'}
                                                         />
                                                     </InputGroup>
                                                 </FormControl>
                                                 <FormControl id="form_message">
                                                     <FormLabel>Message:</FormLabel>
                                                     <Textarea
+                                                        name={'Message'}
                                                         minH={'10rem'}
                                                         borderColor={"#8ca968"}
                                                         _hover={{
