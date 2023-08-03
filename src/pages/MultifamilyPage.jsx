@@ -28,15 +28,9 @@ export default function MultifamilyPage() {
     return (
         <Container minW={'full'} paddingX={'0px'}>
             <InvestmentBanner/>
-                <Stack minH={'30rem'} direction={{base: 'column', md: 'row'}} paddingY={'5rem'} maxW={'90%'} alignSelf={'center'}>
+                <Stack minH={'30rem'} direction={{base: 'column', md: 'row'}} paddingY={'5rem'} paddingX={'5rem'}>
                     <Flex p={0} flex={1} align={'top'} justify={'center'}>
                         <Stack spacing={'10rem'} w={'fit-content'} maxW={'lg'} >
-                            <Image
-                                borderRadius={'md'}
-                                alt={'Login Image'}
-                                objectFit={'scale-down'}
-                                src={'https://www.commercialcafe.com/blog/wp-content/uploads/sites/10/shutterstock_224776564_1028x686-compressor.jpg'}
-                            />
                             <Image
                                 borderRadius={'md'}
                                 alt={'Login Image'}
