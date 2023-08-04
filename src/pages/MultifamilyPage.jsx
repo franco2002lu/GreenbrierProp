@@ -19,23 +19,31 @@ export default function MultifamilyPage() {
     const images = [
         {
             image:
+                'https://images.squarespace-cdn.com/content/v1/52cc6178e4b0bdc9af0f726a/1389649472846-JFUT1CCA8TJBA663JSAH/500+Street+View.jpg?format=1500w',
+        },
+        {
+            image:
+                'https://images1.loopnet.com/i2/Q2-A9OhocG_E1i7KRIKIfB-Be0r48GPBfLfPwvsRqRE/110/836-838-E-Euclid-Ave-Lexington-KY-Primary-Photo-1-Large.jpg',
+        },
+        {
+            image:
                 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/4fc754a847772310eaf96b62428fbae3-full.webp',
         },
         {
             image:
-                'https://images.getaroom-cdn.com/image/upload/s--xgRNf3QW--/c_limit,e_improve,fl_lossy.immutable_cache,h_940,q_auto:good,w_940/v1676395836/2a10f5f6d5af1aa5757ca75ff7a3ba98ff8f02ac?atc=e7cd1cfa',
+                'https://images1.apartments.com/i2/K9In5k3DhP-eHzMdlAl49iLS9N5An3NWZqWeisoQUbs/111/collins-mill-apartments-milton-fl-building-photo.jpg',
         },
         {
             image:
-                'https://digital.ihg.com/is/image/ihg/hotel-indigo-hattiesburg-5631485311-2x1',
+                'https://cdn.hotelplanner.com/Common/Images/Hotels/3836593_1.jpg',
         },
         {
             image:
-                'https://digital.ihg.com/is/image/ihg/hotel-indigo-hattiesburg-5631485311-2x1',
+                'https://images1.apartments.com/i2/Pv-7o7EmvFPUhbo6pJSROROYg-C8f57yEl1w7qBpDCE/111/the-gates-at-three-rivers-apartments-gulfport-ms-building-photo.jpg',
         },
         {
             image:
-                'https://digital.ihg.com/is/image/ihg/hotel-indigo-hattiesburg-5631485311-2x1',
+                'https://images1.loopnet.com/i2/4-ccXX72kcJyhVGn4wR3h_JFEDzCFFOvDlQ8etEs7H4/112/image.jpg',
         },
     ]
 
@@ -84,38 +92,4 @@ export default function MultifamilyPage() {
 
         </Container>
     );
-
-
-    // return (
-    //     <Container minW={'full'} paddingX={'0px'}>
-    //         <InvestmentBanner/>
-    //         <Stack minH={'30rem'} direction={{base: 'column', md: 'row'}} paddingY={'2rem'}>
-    //             <Flex p={0} flex={1} align={'center'} justify={'center'}>
-    //                 <Stack spacing={6} w={'full'} maxW={'lg'}>
-    //                     <InvestmentList content={content} state={'AL'}/>
-    //                     <InvestmentList content={content} state={'AR'}/>
-    //                     <InvestmentList content={content} state={'CO'}/>
-    //                     <InvestmentList content={content} state={'FL'}/>
-    //                     <InvestmentList content={content} state={'GA'}/>
-    //                     <InvestmentList content={content} state={'IN'}/>
-    //                     <InvestmentList content={content} state={'KY'}/>
-    //                 </Stack>
-    //             </Flex>
-    //             <Flex flex={1} p={0} align={'self-end'} justify={'center'}>
-    //                 <Stack spacing={6} w={'full'} maxW={'lg'}>
-    //                     <Image
-    //                         borderRadius={'md'}
-    //                         alt={'Login Image'}
-    //                         objectFit={'scale-down'}
-    //                         src={'https://www.commercialcafe.com/blog/wp-content/uploads/sites/10/shutterstock_224776564_1028x686-compressor.jpg'}
-    //                     />
-    //                     <InvestmentList content={content} state={'LA'}/>
-    //                     <InvestmentList content={content} state={'MS'}/>
-    //                     <InvestmentList content={content} state={'SC'}/>
-    //                     <InvestmentList content={content} state={'TX'}/>
-    //                 </Stack>
-    //             </Flex>
-    //         </Stack>
-    //     </Container>
-    // );
 }
