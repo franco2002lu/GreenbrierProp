@@ -59,18 +59,18 @@ export default function InvestmentList({state, content}) {
             {/*<Heading fontSize={'3xl'}>*/}
             {/*    {states[state]}*/}
             {/*</Heading>*/}
-            <Heading fontSize={{ base: 'xl', lg: '2xl', xl: '3xl' }}>
+            <Heading fontSize={{ base: 'xl', lg: '2xl', xl: '3xl' }} paddingBottom={'2rem'}>
                 <Text
                     as={'span'}
                     position={'relative'}
                     _after={{
                         content: "''",
                         width: 'full',
-                        height: useBreakpointValue({ base: '20%', md: '30%' }),
+                        height: useBreakpointValue({ base: '10%', md: '20%' }),
                         position: 'absolute',
-                        bottom: 1,
+                        bottom: '-1rem',
                         left: 0,
-                        bg: "#9bb8d3",
+                        bg: "#8ca968",
                         zIndex: -1,
                     }}>
                     {states[state]}
