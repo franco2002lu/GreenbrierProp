@@ -31,8 +31,8 @@ export default function DevelopmentPage() {
                 w={'full'}
                 alignContent={'center'}
                 paddingY={'3.5rem'}>
-                {content && content.map(item => (
-                    <DevelopmentCard key={item.id} dev={{name: item.name, location: item.location, desc: item.description, image: item.image}} />
+                {content && content.map((item, id) => (
+                    <DevelopmentCard key={id} dev={{name: item.name, location: item.location, desc: item.description, image: item.image}} />
                 ))}
             </SimpleGrid>
         </Container>
