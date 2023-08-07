@@ -57,15 +57,15 @@ export default function Navbar() {
                 <Spacer />
 
                 <Menu>
-                    <MenuButton m={"auto"}
+                    <MenuButton as={Button}
+                                m={"auto"}
                                 align={'center'}
                                 bg={"#0D512C"}
                                 color={"#f6f3e7"}
                                 _hover={{
                                     bg: "#8ca968",
                                 }}
-                                variant="solid"
-                                as={Button}>
+                                variant="solid">
                         Menu
                     </MenuButton>
                     <MenuList>
