@@ -80,19 +80,20 @@ export default function AcquisitionCriteriaSec() {
                                     build-to-rent subdivisions, and garden-style apartments.
                                 </Text>
                             </VStack>
-                            <Image
-                                marginLeft={(screen === 'laptop') ? '5rem' : '0rem'}
-                                marginX={(screen === 'mobile') ? '2rem' : '5rem'}
-                                rounded={'md'}
-                                alt={'product image'}
-                                src={
-                                    'https://images1.apartments.com/i2/ViUIkddwHNd9mN7UQZ3BOFA40j39FJprQ_a2Ll2EH7g/111/the-sails-ocean-springs-ocean-springs-ms-exterior.jpg'
-                                }
-                                fit={'cover'}
-                                alignSelf={'center'}
-                                w={'80%'}
-                                h={{ base: '100%', sm: '300px', lg: '400px' }}
-                            />
+                            <Box marginLeft={(screen === 'laptop') ? '5rem' : '0rem'}
+                                 marginX={(screen === 'mobile') ? '2rem' : '5rem'}
+                                 w={'80%'}
+                                 align={'center'}>
+                                <Image
+                                    rounded={'md'}
+                                    alt={'product image'}
+                                    src={
+                                        'https://images1.apartments.com/i2/ViUIkddwHNd9mN7UQZ3BOFA40j39FJprQ_a2Ll2EH7g/111/the-sails-ocean-springs-ocean-springs-ms-exterior.jpg'
+                                    }
+                                    fit={'cover'}
+                                    h={{ base: '100%', sm: '15rem', lg: '25rem' }}
+                                />
+                            </Box>
                         </SimpleGrid>
                         <Box bg={'grey.200'}>
                             <Text
