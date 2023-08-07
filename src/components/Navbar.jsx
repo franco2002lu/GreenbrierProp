@@ -56,8 +56,9 @@ export default function Navbar() {
                 </NavLink>
                 <Spacer />
 
-                <Menu >
-                    <MenuButton align={'center'}
+                <Menu>
+                    <MenuButton m={"auto"}
+                                align={'center'}
                                 bg={"#0D512C"}
                                 color={"#f6f3e7"}
                                 _hover={{
