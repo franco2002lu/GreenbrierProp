@@ -57,7 +57,7 @@ export default function ContactPage() {
             mt={0}
             centerContent
             overflow="hidden"
-            paddingBottom={'2rem'}>
+            paddingY={'2rem'}>
             <Flex>
                 <Box
                     bg={"#0D512C"}
@@ -66,14 +66,14 @@ export default function ContactPage() {
                     m={{ sm: 4, md: 6, lg: 10 }}
                     p={{ sm: 5, md: 5, lg: 16 }}>
                     <Box p={4}>
-                        <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+                        <Wrap spacing={{ base: '2rem', md: '2rem', lg: '3rem' }}>
                             <WrapItem>
                                 <Box>
                                     <Heading>Contact</Heading>
                                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color={"#f6f3e7"}>
                                         Fill out the form below to contact us.
                                     </Text>
-                                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                                    <Box paddingTop={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                                         <VStack pl={0} spacing={7} alignItems="baseline">
                                             <HStack>
                                                 <MdPhone color={"#8ca968"} size="20px" />

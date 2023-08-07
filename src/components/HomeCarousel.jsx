@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {
     Box,
     IconButton,
@@ -27,6 +27,7 @@ export default function HomeCarousel() {
     // As we have used custom buttons, we need a reference variable to
     // change the state
     const [slider, setSlider] = React.useState(null)
+    const [screen, setScreen] = useState("")
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
@@ -53,73 +54,111 @@ export default function HomeCarousel() {
         },
     ]
 
-    return (
-        <Box position={'relative'} height={'40rem'} width={'full'} overflow={'hidden'}>
-            {/* CSS files for react-slick */}
-            <link
-                rel="stylesheet"
-                type="text/css"
-                href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-            />
-            <link
-                rel="stylesheet"
-                type="text/css"
-                href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-            />
-            {/* Left Icon */}
-            <IconButton
-                aria-label="left-arrow"
-                color={'gray.300'}
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={'translate(0%, -50%)'}
-                zIndex={2}
-                onClick={() => slider?.slickPrev()}>
-                <AiOutlineLeft size="40px" />
-            </IconButton>
-            {/* Right Icon */}
-            <IconButton
-                aria-label="right_arrow"
-                color={'gray.300'}
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={'translate(0%, -50%)'}
-                zIndex={2}
-                onClick={() => slider?.slickNext()}>
-                <AiOutlineRight size="40px" />
-            </IconButton>
-            {/* Slider */}
-            <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                {cards.map((card, index) => (
-                    <Box
-                        key={index}
-                        height={'2xl'}
-                        position="relative"
-                        backgroundPosition="center"
-                        backgroundRepeat="no-repeat"
-                        backgroundSize="cover"
-                        backgroundImage={card.image}
-                    >
+    useEffect(() => {
+        const details = navigator.userAgent;
+        const regexp = /android|iphone|kindle|ipad/i;
+        const isMobileDevice = regexp.test(details);
 
-                        <Center size="container.xxl"
-                                   height="640px"
-                                   position="relative"
-                                   backdropFilter='auto'
-                                   backdropBlur='7px'
+        if (isMobileDevice) {
+            setScreen("mobile")
+        } else {
+            setScreen("laptop")
+        }
+    }, [])
+
+    if (screen === 'laptop') {
+        return (
+            <Box position={'relative'} height={'40rem'} overflow={'hidden'} w={'full'}>
+                {/* CSS files for react-slick */}
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+                />
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+                />
+                {/* Left Icon */}
+                <IconButton
+                    aria-label="left-arrow"
+                    color={'gray.300'}
+                    variant="ghost"
+                    position="absolute"
+                    left={side}
+                    top={top}
+                    transform={'translate(0%, -50%)'}
+                    zIndex={2}
+                    onClick={() => slider?.slickPrev()}>
+                    <AiOutlineLeft size="40px" />
+                </IconButton>
+                {/* Right Icon */}
+                <IconButton
+                    aria-label="right_arrow"
+                    color={'gray.300'}
+                    variant="ghost"
+                    position="absolute"
+                    right={side}
+                    top={top}
+                    transform={'translate(0%, -50%)'}
+                    zIndex={2}
+                    onClick={() => slider?.slickNext()}>
+                    <AiOutlineRight size="40px" />
+                </IconButton>
+                {/* Slider */}
+                <Slider {...settings} ref={(slider) => setSlider(slider)}>
+                    {cards.map((card, index) => (
+                        <Box
+                            key={index}
+                            height={'2xl'}
+                            position="relative"
+                            backgroundPosition="center"
+                            backgroundRepeat="no-repeat"
+                            backgroundSize="cover"
+                            backgroundImage={card.image}
+                        >
+
+                            <Center size="container.xxl"
+                                    height="640px"
+                                    position="relative"
+                                    backdropFilter='auto'
+                                    backdropBlur='7px'
                                     paddingBottom={'1rem'}>
-                            <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl', xl:'6xl'}}
-                                     fontWeight={'bold'}
-                                     color={"#f6f3e7"}>
-                                {card.title}
-                            </Heading>
-                        </Center>
-                    </Box>
-                ))}
-            </Slider>
-        </Box>
-    )
+                                <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl', xl:'6xl'}}
+                                         fontWeight={'bold'}
+                                         color={"#f6f3e7"}>
+                                    {card.title}
+                                </Heading>
+                            </Center>
+                        </Box>
+                    ))}
+                </Slider>
+            </Box>
+        )
+    } else {
+        return (
+            <Box
+                height={'lg'}
+                position="relative"
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                backgroundSize="cover"
+                backgroundImage={'https://fosheeresidential.com/wp-content/uploads/2023/01/DJI_0189.jpg'}>
+                <Center size="container.xxl"
+                        height="full"
+                        position="relative"
+                        backdropFilter='auto'
+                        backdropBlur='7px'
+                        paddingBottom={'1rem'}>
+                    <Heading fontSize={{ base: '3xl', md: '3xl', lg: '4xl', xl:'5xl'}}
+                             align={'center'}
+                             fontWeight={'bold'}
+                             color={"#f6f3e7"}>
+                        {'Greenbrier Properties, LLC'}
+                    </Heading>
+                </Center>
+            </Box>
+        );
+    }
 }

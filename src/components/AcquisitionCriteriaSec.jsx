@@ -13,21 +13,37 @@ import {
     List,
     ListItem
 } from '@chakra-ui/react'
+import {useEffect, useState} from "react";
 
 export default function AcquisitionCriteriaSec() {
+    const [screen, setScreen] = useState("")
+
+    useEffect(() => {
+        const details = navigator.userAgent;
+        const regexp = /android|iphone|kindle|ipad/i;
+        const isMobileDevice = regexp.test(details);
+
+        if (isMobileDevice) {
+            setScreen("mobile")
+        } else {
+            setScreen("laptop")
+        }
+    }, [])
+
     return (
         <Container maxW={'7xl'} w={'full'}>
 
             <SimpleGrid
                 spacing={{ base: 8, md: 10 }}
                 py={{ base: 18, md: 24 }}
+                px={(screen === 'mobile') ? '1rem' : '0rem'}
                 maxW={'full'}>
                 <Stack spacing={{ base: 6, md: 10 }}>
                     <Box as={'header'}>
                         <Heading
                             lineHeight={1.1}
                             fontWeight={600}
-                            fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+                            fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
                             Our Strategy
                         </Heading>
                     </Box>
@@ -65,14 +81,15 @@ export default function AcquisitionCriteriaSec() {
                                 </Text>
                             </VStack>
                             <Image
-                                marginLeft={'5rem'}
+                                marginLeft={(screen === 'laptop') ? '5rem' : '0rem'}
+                                marginX={(screen === 'mobile') ? '2rem' : '5rem'}
                                 rounded={'md'}
                                 alt={'product image'}
                                 src={
                                     'https://images1.apartments.com/i2/ViUIkddwHNd9mN7UQZ3BOFA40j39FJprQ_a2Ll2EH7g/111/the-sails-ocean-springs-ocean-springs-ms-exterior.jpg'
                                 }
                                 fit={'cover'}
-                                align={'center'}
+                                alignSelf={'center'}
                                 w={'80%'}
                                 h={{ base: '100%', sm: '300px', lg: '400px' }}
                             />
@@ -87,7 +104,7 @@ export default function AcquisitionCriteriaSec() {
                                 Benefits of Multifamily
                             </Text>
 
-                            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={(screen === 'mobile') ? 2 : 10}>
                                 <List spacing={2}>
                                     <ListItem>
                                         <Text as={'span'} fontWeight={'bold'}>
@@ -140,7 +157,9 @@ export default function AcquisitionCriteriaSec() {
                                 Acquisition Criteria
                             </Text>
 
-                            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                            <SimpleGrid columns={{ base: 1, md: 2 }}
+                                        spacing={(screen === 'mobile') ? 2 : 10}
+                                        mb={(screen === 'mobile') ? '1rem' : '0'}>
                                 <List spacing={2}>
                                     <ListItem>
                                         <Text as={'span'} fontWeight={'bold'}>

@@ -12,7 +12,7 @@ export default function HomePage() {
 
     return (
         <Container minW={'full'} paddingX={'0px'}>
-            <HomeCarousel/>
+            <HomeCarousel />
             <HomeFiller />
             <HomeAboutSec />
             <HomeInvestmentSec />
