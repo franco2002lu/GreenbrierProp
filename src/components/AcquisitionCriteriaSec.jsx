@@ -91,7 +91,7 @@ export default function AcquisitionCriteriaSec() {
                                         'https://images1.apartments.com/i2/ViUIkddwHNd9mN7UQZ3BOFA40j39FJprQ_a2Ll2EH7g/111/the-sails-ocean-springs-ocean-springs-ms-exterior.jpg'
                                     }
                                     fit={'cover'}
-                                    h={{ base: '100%', sm: '15rem', lg: '25rem' }}
+                                    h={{ base: '10rem', sm: '15rem', lg: '25rem' }}
                                 />
                             </Box>
                         </SimpleGrid>
