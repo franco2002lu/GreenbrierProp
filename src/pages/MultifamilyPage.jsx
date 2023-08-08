@@ -14,6 +14,7 @@ import ScrollToTop from "../functions/ScrollToTop";
 
 export default function MultifamilyPage() {
     const [content, setContent] = useState(undefined);
+    const [screen, setScreen] = useState("")
     ScrollToTop();
 
     const images = [
@@ -48,6 +49,18 @@ export default function MultifamilyPage() {
     ]
 
     useEffect(() => {
+        const details = navigator.userAgent;
+        const regexp = /android|iphone|kindle|ipad/i;
+        const isMobileDevice = regexp.test(details);
+
+        if (isMobileDevice) {
+            setScreen("mobile")
+        } else {
+            setScreen("laptop")
+        }
+    }, [])
+
+    useEffect(() => {
         getPropertyData('multifamily')
             .then(res => {
                 setContent(res)
@@ -59,8 +72,15 @@ export default function MultifamilyPage() {
     return (
         <Container minW={'full'} paddingX={'0px'}>
             <InvestmentBanner/>
-                <Stack minH={'30rem'} direction={{base: 'column', md: 'row'}} paddingY={'5rem'} paddingX={'8rem'}>
-                    <Flex p={0} flex={1} align={'top'} justify={'center'}>
+                <Stack minH={'30rem'}
+                       direction={{base: 'column', md: 'row'}}
+                       paddingY={(screen === 'laptop') ? '5rem' : '2rem'}
+                       paddingX={(screen === 'laptop') ? '8rem' : '1rem'}>
+                    <Flex p={0}
+                          flex={1}
+                          align={'top'}
+                          justify={'center'}
+                          display={(screen === 'laptop') ? 'block' : 'none'}>
                         <Stack spacing={'10rem'} w={'fit-content'} maxW={'lg'} >
                             {images.map((item, id) => (
                                 <Image
@@ -74,7 +94,11 @@ export default function MultifamilyPage() {
                         </Stack>
                     </Flex>
                     <Flex flex={1} p={0} align={'center'} justify={'center'}>
-                        <Stack spacing={6} w={'fit-content'} maxW={'lg'} paddingLeft={'2rem'}>
+                        <Stack spacing={6}
+                               w={'fit-content'}
+                               maxW={'lg'}
+                               paddingLeft={(screen === 'laptop') ? '2rem' : '0rem'}
+                               paddingX={(screen === 'laptop') ? '0rem' : '2rem'}>
                             <InvestmentList content={content} state={'AL'}/>
                             <InvestmentList content={content} state={'AR'}/>
                             <InvestmentList content={content} state={'CO'}/>
