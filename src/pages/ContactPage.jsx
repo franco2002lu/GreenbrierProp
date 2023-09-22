@@ -18,7 +18,6 @@ import {
     useToast
 } from '@chakra-ui/react';
 import {
-    MdPhone,
     MdEmail,
     MdLocationOn,
     MdOutlineEmail,
@@ -75,12 +74,7 @@ export default function ContactPage() {
                                     </Text>
                                     <Box paddingTop={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                                         <VStack pl={0} spacing={7} alignItems="baseline">
-                                            <HStack>
-                                                <MdPhone color={"#8ca968"} size="20px" />
-                                                <Text fontWeight={'bold'}>
-                                                    NUMBER HERE
-                                                </Text>
-                                            </HStack>
+                                            <Spacer/>
                                             <HStack>
                                                 <MdEmail color={"#8ca968"} size="20px" />
                                                 <Text fontWeight={'bold'}>
