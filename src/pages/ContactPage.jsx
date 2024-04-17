@@ -15,6 +15,7 @@ import {
     InputGroup,
     InputLeftElement,
     Textarea,
+    Spacer,
     useToast
 } from '@chakra-ui/react';
 import {
